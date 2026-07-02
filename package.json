@@ -1,18 +1,11 @@
 {
-  "name": "@workspace/scripts",
+  "name": "@workspace/api-spec",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "hello": "tsx ./src/hello.ts",
-    "bot": "tsx ./src/bot.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
-  },
-  "dependencies": {
-    "discord.js": "^14.19.3"
+    "codegen": "orval --config ./orval.config.ts && pnpm -w run typecheck:libs"
   },
   "devDependencies": {
-    "@types/node": "catalog:",
-    "tsx": "catalog:"
+    "orval": "^8.18.0"
   }
 }
